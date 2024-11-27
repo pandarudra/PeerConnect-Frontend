@@ -25,21 +25,23 @@ export const Landing = () => {
             to="https://github.com/pandarudra/PeerConnect-Frontend"
             className="px-6 gfont py-3 w-1/3 text-center bg-[#1E1E1E] text-white rounded-lg shadow-md hover:bg-[#373737] transition duration-300"
           >
-            Fork
+            Contribute
           </Link>
         </div>
         <div className="w-full h-36 border-2 border-[#373737] flex flex-col justify-center items-center gap-3">
           <h3 className="text-xl gfont text-[#373737]">
             Try Peer Connect Meet for free
           </h3>
-          <Link className="px-6 gfont w-64 py-3 text-center bg-[#1E1E1E] text-white rounded-lg shadow-md hover:bg-[#373737] transition duration-300">
+          <Link
+            to="/home"
+            className="px-6 gfont w-64 py-3 text-center bg-[#1E1E1E] text-white rounded-lg shadow-md hover:bg-[#373737] transition duration-300"
+          >
             Start Meet
           </Link>
         </div>
       </div>
-      <div className="absolute bottom-0">
-        <Foot />
-      </div>
+
+      <Foot />
     </div>
   );
 };
