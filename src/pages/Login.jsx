@@ -4,6 +4,7 @@ import { url } from "../config";
 import { wait } from "../utils/wait";
 import { useAuth } from "../hooks/useAuth";
 import { axiosInstance } from "../utils/refresh";
+import '../CSS/style.css'
 
 export const Login = () => {
   const [Email, setEmail] = useState("");
@@ -48,8 +49,8 @@ export const Login = () => {
   return (
     <div className="flex justify-center items-center min-h-screen bg-black">
       <div className="w-full max-w-md p-8 bg-gradient-to-br from-red-900 to-black rounded-lg shadow-xl">
-        <h1 className="text-5xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-white mb-8 font-['Montserrat']">
-          LOGIN
+        <h1 className="text-5xl gfont  text-center text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-white mb-8 ">
+          login
         </h1>
         <form onSubmit={onLogin} className="space-y-6">
           <div>
@@ -88,7 +89,7 @@ export const Login = () => {
 
           <button
             type="submit"
-            className="w-full py-3 font-bold text-lg bg-gradient-to-r from-red-600 to-red-300 rounded-lg text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-red-400"
+            className="w-full py-3 gfont font-bold text-lg bg-gradient-to-r from-red-600 to-red-300 rounded-lg text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-red-400"
           >
             Login
           </button>
@@ -107,4 +108,5 @@ export const Login = () => {
     </div>
   );
 };
+
 

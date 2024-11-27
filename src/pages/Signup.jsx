@@ -4,7 +4,7 @@ import { wait } from "../utils/wait";
 import { url } from "../config";
 import { useAuth } from "../hooks/useAuth";
 import { axiosInstance } from "../utils/refresh";
-
+import '../CSS/style.css'
 
  
 
@@ -53,8 +53,8 @@ export const Signup = () => {
   return (
     <div className="flex justify-center items-center min-h-screen bg-black">
       <div className="w-full max-w-md p-8 bg-gradient-to-br from-red-900 to-black rounded-lg shadow-xl">
-        <h1 className="text-5xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-white mb-8 font-['Parkisans']">
-          Parkisans
+        <h1 className="text-5xl gfont  text-center text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-white mb-8 ">
+          signup
         </h1>
         <form onSubmit={onSignup} className="space-y-6">
           <div>
