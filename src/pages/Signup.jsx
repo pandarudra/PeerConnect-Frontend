@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { wait } from "../utils/wait";
 import { url } from "../config";
 import { useAuth } from "../hooks/useAuth";
 import { axiosInstance } from "../utils/refresh";
-import '../CSS/style.css'
-
- 
+import toast, { Toaster } from "react-hot-toast";
+import "../CSS/style.css";
 
 export const Signup = () => {
   const [Username, setUsername] = useState("");
@@ -41,7 +40,7 @@ export const Signup = () => {
       setPassword("");
       setUsername("");
       localStorage.setItem("token", res.data.token);
-      alert("Signup successful, redirecting to login page");
+      toast.success("Signup successful");
       await wait(1000);
 
       navigate("/login");
@@ -52,9 +51,10 @@ export const Signup = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-black">
-      <div className="w-full max-w-md p-8 bg-gradient-to-br from-red-900 to-black rounded-lg shadow-xl">
-        <h1 className="text-5xl gfont  text-center text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-white mb-8 ">
-          signup
+      <Toaster />
+      <div className="w-full max-w-md p-8  rounded-lg shadow-xl border-2 border-[#434343]">
+        <h1 className="text-4xl gfont2  text-center  text-[#434343] mb-8 ">
+          Signup
         </h1>
         <form onSubmit={onSignup} className="space-y-6">
           <div>
@@ -70,7 +70,7 @@ export const Signup = () => {
               placeholder="Enter your username"
               value={Username}
               onChange={(e) => setUsername(e.target.value)}
-              className="w-full px-4 py-3 mt-2 text-gray-200 bg-gray-700 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-600 placeholder:text-gray-400 placeholder:italic"
+              className="w-full px-4 py-3 mt-2 text-gray-200 bg-transparent rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-600 placeholder:text-gray-400 placeholder:italic"
             />
           </div>
 
@@ -87,7 +87,7 @@ export const Signup = () => {
               placeholder="Enter your email"
               value={Email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-3 mt-2 text-gray-200 bg-gray-700 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-600 placeholder:text-gray-400 placeholder:italic"
+              className="w-full px-4 py-3 mt-2 text-gray-200 bg-transparent  rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-600 placeholder:text-gray-400 placeholder:italic"
             />
           </div>
 
@@ -104,30 +104,28 @@ export const Signup = () => {
               placeholder="Enter your password"
               value={Password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-3 mt-2 text-gray-200 bg-gray-700 rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-600 placeholder:text-gray-400 placeholder:italic"
+              className="w-full px-4 py-3 mt-2 text-gray-200 bg-transparent rounded-md border border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-600 placeholder:text-gray-400 placeholder:italic"
             />
           </div>
 
           <button
             type="submit"
-            className="w-full py-3 font-bold text-lg bg-gradient-to-r from-red-600 to-red-300 rounded-lg text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-red-400"
+            className="w-full py-3 gfont2 font-bold text-lg bg-gradient-to-r from-[#ff6352] to-red-900 rounded-lg text-white hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-red-400"
           >
             Sign Up
           </button>
         </form>
 
-        <p className="mt-6 text-center text-sm text-gray-400">
+        <p className="mt-6 text-center text-sm text-gray-400 gfont">
           Already have an account?{" "}
-          <a
-            href="/login"
+          <Link
+            to="/login"
             className="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-300 hover:underline"
           >
             Login
-          </a>
+          </Link>
         </p>
       </div>
     </div>
   );
 };
-
-

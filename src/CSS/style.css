@@ -1,4 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
+
 .gfont {
   font-family: "Parkinsans", sans-serif;
+}
+
+.gfont2 {
+  font-family: "Audiowide", sans-serif;
+}
+
+.rotate {
+  border: 16px solid #434343;
+  animation: rotation 2s infinite linear;
+  border-radius: none;
 }

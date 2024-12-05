@@ -8,6 +8,7 @@ export const Landing = () => {
         <h1 className="text-5xl flex gap-3 text-center gfont text-[#373737]">
           <p className="text-[#ff6352]">Peer</p> Connect
         </h1>
+
         <div className="w-full h-1/3 flex justify-center items-center gap-3">
           <Link
             to="/signup"
@@ -28,7 +29,7 @@ export const Landing = () => {
             Contribute
           </Link>
         </div>
-        <div className="w-full h-36 border-2 border-[#373737] flex flex-col justify-center items-center gap-3">
+        <div className="w-full  h-36 border-2 border-[#373737] flex flex-col justify-center items-center gap-3">
           <h3 className="text-xl gfont text-[#373737]">
             Try Peer Connect Meet for free
           </h3>
